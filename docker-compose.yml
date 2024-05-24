@@ -1,0 +1,10 @@
+services:
+  nginx-react:
+    container_name: nginx-loadbalancer-proxy-public
+    image: nginx:latest
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /etc/letsencrypt:/etc/letsencrypt
+      - ./ngnix/nginx.conf:/etc/nginx/nginx.conf
